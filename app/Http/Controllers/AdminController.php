@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Categories;
 use App\Models\Brands;
+use App\Models\Drug;
 use PDF;
 
 class AdminController extends Controller
@@ -22,39 +23,7 @@ class AdminController extends Controller
         return view('home', compact('user'));
     }
 
-//     public function submit_drug(Request $req)
-//     {
-//         $drug = new Drug;
-
-//         $drug->namaObat = $req->get('namaObat');
-//         $drug->jenis = $req->get('jenis');
-//         $drug->brand = $req->get('brand');
-//         $drug->stok = $req->get('stok');
-//         $drug->harga = $req->get('harga');
-//         $drug->harga = $req->get('categories');
-//         $drug->harga = $req->get('brands');
-
-//         if ($req->hasFile('cover')) {
-//             $extension = $req->file('cover')->extension();
-
-//             $filename = 'cover_drug' . time() . '.' . $extension;
-//             $req->file('cover')->storeAs(
-//                 'public/cover_drug',
-//                 $filename
-//             );
-
-//             $drug->cover = $filename;
-//         }
-//         $drug->save();
-
-//         $notification = array(
-//             'message' => 'Data Obat berhasil ditambahkan',
-//             'alert-type' => 'success'
-//         );
-
-//         return redirect()->route('admin.drugs')->with($notification);
-//     }
-
+}
 // public function update_drug(Request $req)
 //     {
 //         $drug = Drug::find($req->get('id'));
@@ -88,22 +57,6 @@ class AdminController extends Controller
 
 //         return redirect()->route('admin.drugs')->with($notification);
 //     }
-
-//     public function delete_drug(Request $req)
-//     {
-//         $drug = Drug::find($req->get('id'));
-
-//         storage::delete('public/cover_drug/'.$req->get('old_cover'));
-
-//         $drug->delete();
-
-//         $notification = array(
-//             'message' => 'Data Obat Berhasil Dihapus',
-//             'alert-type' => 'succes'
-//         );
-
-//         return redirect()->route('admin.drugs')->with($notification);
-//     }
 //     public function print_drugs()
 //     {
 //         $drugs = Drug::all();
@@ -114,4 +67,4 @@ class AdminController extends Controller
 
 
     // PENGELOLAAN CATEGORIES
-}
+

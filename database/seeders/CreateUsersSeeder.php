@@ -18,7 +18,7 @@ class CreateUsersSeeder extends Seeder
             [
                 'name' => 'isUser',
                 'username' => 'isUser',
-                'email' => 'usercoba@mail.com',
+                'email' => 'userpia@mail.com',
                 'password' => bcrypt('12345'),
                 'photo' => 'user.jpg',
                 'roles_id' => 2
@@ -26,7 +26,7 @@ class CreateUsersSeeder extends Seeder
             [
                 'name' => 'isAdmin',
                 'username' => 'isAdmin',
-                'email' => 'admincoba@mail.com',
+                'email' => 'adminpia@mail.com',
                 'password' => bcrypt('12345'),
                 'photo' => 'admin.jpg',
                 'roles_id' => 1

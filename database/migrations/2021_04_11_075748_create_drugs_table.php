@@ -15,15 +15,15 @@ class CreateDrugsTable extends Migration
     {
         Schema::create('drugs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('namaObat');
+            $table->string('nama');
             $table->string('jenis');
-            $table->string('brand');
-            $table->integer('stok');
-            $table->string('harga');
+            
             $table->bigInteger('categories')->unsigned();
             $table->bigInteger('brands')->unsigned();
             $table->foreign('categories')->references('id')->on('categories');
             $table->foreign('brands')->references('id')->on('brands');
+            $table->integer('stok');
+            $table->string('harga');
             $table->string('cover')->nullable();
             $table->timestamps();
         });

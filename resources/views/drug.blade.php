@@ -23,11 +23,10 @@
                                     <th>NO</th>
                                     <th>NAMA OBAT</th>
                                     <th>JENIS</th>
-                                    <th>KERJA OBAT</th>
-                                    <th>STOK</th>
-                                    <th>HARGA</th>
                                     <th>KATEGORI</th>
                                     <th>MEREK</th>
+                                    <th>STOK</th>
+                                    <th>HARGA</th>
                                     <th>COVER</th>
                                     <th>AKSI</th>
                                 </tr>
@@ -37,13 +36,13 @@
                                 @foreach($drugs as $drug)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $drug->namaObat }}</td>
+                                    <td>{{ $drug->nama }}</td>
                                     <td>{{ $drug->jenis }}</td>
-                                    <td>{{ $drug->brand }}</td>
-                                    <td>{{ $drug->stok }}</td>
-                                    <td>{{ $drug->harga }}</td>
                                     <td>{{ $drug->categories }}</td>
                                     <td>{{ $drug->brands }}</td>
+                                    <td>{{ $drug->stok }}</td>
+                                    <td>{{ $drug->harga }}</td>
+                                    
                                     <td>
                                     @if($drug->cover !== null)
                                         <img src="{{asset('storage/cover_drug/'.$drug->cover) }}" width="100px"/>
@@ -80,16 +79,20 @@
           <form method="post" action="{{ route('admin.drug.submit') }}" enctype="multipart/form-data">
           @csrf
               <div class="form-group">
-                  <label for="namaObat">Nama Obat</label>
-                  <input type="text" class="form-control" name="namaObat" id="namaObat" required/>
+                  <label for="nama">Nama Obat</label>
+                  <input type="text" class="form-control" name="nama" id="nama" required/>
               </div>
               <div class="form-group">
                   <label for="jenis">Jenis</label>
                   <input type="text" class="form-control" name="jenis" id="jenis" required/>
               </div>
               <div class="form-group">
-                <label for="brand">Kerja Obat</label>
-                <input type="text" class="form-control" name="brand" id="brand" required/>
+                <label for="categories">Kategori</label>
+                <input type="text" class="form-control" name="categories" id="categories" required/>
+            </div>
+            <div class="form-group">
+              <label for="brands">Brand</label>
+              <input type="text" class="form-control" name="brands" id="brands" required/>
             </div>
               <div class="form-group">
                   <label for="stok">Jumlah</label>
@@ -99,14 +102,7 @@
                   <label for="harga">Harga</label>
                   <input type="text" class="form-control" name="harga" id="harga" required/>
               </div>
-            <div class="form-group">
-              <label for="categories">Kategori</label>
-              <input type="text" class="form-control" name="categories" id="categories" required/>
-          </div>
-          <div class="form-group">
-            <label for="brands">Brand</label>
-            <input type="text" class="form-control" name="brands" id="brands" required/>
-          </div>
+            
               <div class="form-group">
                   <label for="cover">Gambar</label>
                   <input type="file" class="form-control" name="cover" id="cover"/>
@@ -138,17 +134,21 @@
           <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                      <label for="edit-namaObat">Nama Obat</label>
-                      <input type="text" class="form-control" name="namaObat" id="edit-namaObat" required/>
+                      <label for="edit-nama">Nama Obat</label>
+                      <input type="text" class="form-control" name="nama" id="edit-nama" required/>
                   </div>
                   <div class="form-group">
                       <label for="edit-jenis">Jenis</label>
                       <input type="text" class="form-control" name="jenis" id="edit-jenis" required/>
                   </div>
                   <div class="form-group">
-                    <label for="edit-brand">Kerja Obat</label>
-                    <input type="text" class="form-control" name="brand" id="edit-brand" required/>
-                  </div>
+                    <label for="edit-categories">Kategori</label>
+                    <input type="text" class="form-control" name="categories" id="categories" required/>
+                </div>
+                <div class="form-group">
+                  <label for="editbrands">Brand</label>
+                  <input type="text" class="form-control" name="brands" id="brands" required/>
+                </div>
                   <div class="form-group">
                       <label for="edit-stok">Jumlah</label>
                       <input type="text" class="form-control" name="stok" id="edit-stok" required/>
@@ -157,14 +157,7 @@
                       <label for="edit-harga">Harga</label>
                       <input type="number" class="form-control" name="harga" id="edit-harga" required/>
                   </div>
-                  <div class="form-group">
-                    <label for="categories">Kategori</label>
-                    <input type="text" class="form-control" name="categories" id="categories" required/>
-                </div>
-                <div class="form-group">
-                  <label for="brands">Brand</label>
-                  <input type="text" class="form-control" name="brands" id="brands" required/>
-                </div>
+                  
               </div>
               <div class="col-md-6">
                   <div class="form-group" id="image-area"></div>
@@ -232,7 +225,7 @@
     
     </style>
 @stop
-{{-- @section('js')
+@section('js')
     <script>
         $(function(){
 
@@ -247,13 +240,13 @@
                     url: baseurl+'/admin/ajaxadmin/dataDrug/'+id,
                     dataType: 'json',
                     success: function(res){
-                        $('#edit-namaObat').val(res.namaObat);
+                        $('#edit-nama').val(res.nama);
                         $('#edit-jenis').val(res.jenis);
-                        $('#edit-brand').val(res.brand);
+                        $('#edit-categories').val(res.categories);
+                        $('#edit-brands').val(res.brands);
                         $('#edit-stok').val(res.stok);
                         $('#edit-harga').val(res.harga);
-                        // $('#edit-hcategories').val(res.categories);
-                        // $('#edit-brands').val(res.brands);
+                        
                         $('#edit-id').val(res.id);
                         $('#edit-old-cover').val(res.cover);
 
@@ -283,4 +276,4 @@
     <script>
 
     </script>
-@stop --}}
+@stop

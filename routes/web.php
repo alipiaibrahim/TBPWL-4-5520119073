@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-// use App\Http\Controllers\DrugController;
+use App\Http\Controllers\DrugController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
 
@@ -30,33 +30,29 @@ Route::get('admin/home', [AdminController::class, 'index'])
     ->name('admin.home')
     ->middleware('is_admin');
 
-// Route::get('admin/drugs', [DrugController::class, 'index'])
-//     ->name('admin.drugs')
-//     ->middleware('is_admin');
+Route::get('admin/drugs', [DrugController::class, 'index'])
+    ->name('admin.drugs')
+    ->middleware('is_admin');
 
-// Route::post('admin/drugs', [DrugController::class, 'store'])
-//     ->name('admin.drug.submit')
-//     ->middleware('is_admin');
+Route::post('admin/drugs', [DrugController::class, 'store'])
+    ->name('admin.drug.submit')
+    ->middleware('is_admin');
 
-// //PENGELOLAAN BUKU
-// Route::post('admin/drugs', [AdminController::class, 'submit_drug'])
-//     ->name('admin.drug.submit')
-//     ->middleware('is_admin');
+//PENGELOLAAN BUKU
+Route::post('admin/drugs', [DrugController::class, 'submit_drug'])
+    ->name('admin.drug.submit')
+    ->middleware('is_admin');
 
-// //UPDATE BOOK
-// Route::patch('admin/drugs/update', [DrugController::class, 'update_drug'])
-//     ->name('admin.drug.update')
-//     ->middleware('is_admin');
+//UPDATE BOOK
+Route::patch('admin/drugs/update', [DrugController::class, 'update'])
+    ->name('admin.drug.update')
+    ->middleware('is_admin');
 
-// Route::patch('admin/drugs/update', [AdminController::class, 'update_drug'])
-//     ->name('admin.drug.update')
-//     ->middleware('is_admin');
+Route::get('admin/ajaxadmin/dataDrug/{id}', [DrugController::class, 'getDataDrug']);
 
-// Route::get('admin/ajaxadmin/dataDrug/{id}', [DrugController::class, 'getDataDrug']);
-
-// Route::delete('admin/drugs/delete', [DrugController::class, 'destroy'])
-//     ->name('admin.drug.delete')
-//     ->middleware('is_admin');
+Route::delete('admin/drugs/delete', [DrugController::class, 'destroy'])
+    ->name('admin.drug.delete')
+    ->middleware('is_admin');
 
 //BRANDS
 Route::get('admin/merek', [App\Http\Controllers\BrandsController::class, 'index'])
