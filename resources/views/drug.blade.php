@@ -13,10 +13,13 @@
         <div class="card">
             <div class="card-header">
               {{ __('Pengelolaan Obat')}}
-              <button class="btn btn-primary float-right" data-toggle="modal" data-target="#tambahDrugModal"><i class="fa fa-plus"></i> Tambah Data</button>
+            
                        {{-- <button class="btn btn-secondary float-right" data-toggle="modal"><a href="{{ route('admin.print.drugs') }}" target="_blank"><i class="fa fa-print"></i> Cetak PDF</a></button> --}}
                 </div>
                     <div class="card-body">
+                      <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahDrugModal"><i class="fa fa-plus"></i> Tambah Data</button>
+                      {{-- <div class="btn-group mb-5" role="group" aria-label="Basis Example"> --}}
+                      </div>
                         <table id="table-data" class="table table-borderer display nowrap" style="width:100%">
                             <thead>
                                 <tr>
@@ -52,8 +55,8 @@
                                     </td>
                                     <td>
                                       <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" id="btn-edit-drug" class="btn btn-success" data-toggle="modal" data-target="#editDrugModal" data-id="{{ $drug->id }}">Ubah</button>
-                                        <button type="button" id="btn-delete-drug" class="btn btn-danger" data-toggle="modal" data-target="#deleteDrugModal" data-id="{{ $drug->id }}" data-cover="{{ $drug->cover }}">Hapus</button>
+                                        <button type="button" id="btn-edit-drug" class="btn" data-toggle="modal" data-target="#editDrugModal" data-id="{{ $drug->id }}"><i class="fa fa-edit"></i></button>
+                                        <button type="button" id="btn-delete-drug" class="btn" data-toggle="modal" data-target="#deleteDrugModal" data-id="{{ $drug->id }}" data-cover="{{ $drug->cover }}"><i class="fa fa-trash"></i></button>
                                     </div>
                                     </td>
                                 </tr>
@@ -143,11 +146,11 @@
                   </div>
                   <div class="form-group">
                     <label for="edit-categories">Kategori</label>
-                    <input type="text" class="form-control" name="categories" id="categories" required/>
+                    <input type="text" class="form-control" name="categories" id="edit-categories" required/>
                 </div>
                 <div class="form-group">
-                  <label for="editbrands">Brand</label>
-                  <input type="text" class="form-control" name="brands" id="brands" required/>
+                  <label for="edit-brands">Brand</label>
+                  <input type="text" class="form-control" name="brands" id="edit-brands" required/>
                 </div>
                   <div class="form-group">
                       <label for="edit-stok">Jumlah</label>

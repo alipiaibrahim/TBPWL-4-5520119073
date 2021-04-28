@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <button class="btn btn-primary float-left mr-3" data-toggle="modal" data-target="#modalTambahData"><i class="fa fa-plus"></i> Tambah Data</button>
 
-                    <div class="btn-group mb-5" role="group" aria-label="Basis Example">
+                    {{-- <div class="btn-group mb-5" role="group" aria-label="Basis Example"> --}}
 
                     </div>
                     <table id="table-data" class="table table-borderer display nowrap" style="width:100%">

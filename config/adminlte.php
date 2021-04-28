@@ -230,44 +230,57 @@ return [
             'topnav' => true,
         ],
         [
+            'text'        => 'Dashboard',
+            'url'         => 'admin/home',
+            'icon'        => 'fas fa-file-prescription',
+            'can'         => ['isUser', 'isAdmin']
+        ],
+        [
+            'text'        => 'User',
+            'url'         => '',
+            'icon'        => 'far fa-address-card',
+            'can'         => ['isUser', 'isAdmin']
+        ],
+        [
             'text'        => 'Pengelolaan Obat',
             'url'         => 'admin/drugs',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-clinic-medical',
             'can'         => ['isUser', 'isAdmin']
         ],
         [
             'text'        => 'Kategori Obat',
             'url'         => 'admin/kategori',
-            'icon'        => 'fas fa-fw fa-folder-open',
-            'can' => 'isAdmin',
-        ],
-        [
-            'text' => 'Brand/Merek Obat',
-            'url'  => 'admin/merek',
-            'icon'        => 'fas fa-fw fa-book',
+            'icon'        => 'fas fa-book-reader',
             'can'         => 'isAdmin',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Brand/Merek Obat',
+            'url'         => 'admin/merek',
+            'icon'        => 'fas fa-chalkboard',
+            'can'         => 'isAdmin',
         ],
-        ['header' => 'account_settings'],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Laporan',
+            'icon'    => 'fas fa-tv',
+            'can'     => 'isAdmin',
             'submenu' => [
                 [
                     'text' => 'level_one',
