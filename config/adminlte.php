@@ -283,39 +283,37 @@ return [
             'can'     => 'isAdmin',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Laporan Obat Masuk',
                     'url'  => '#',
+                    'icon' => 'fas fa-address-book',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => 'Laporan Obat Keluar',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
+                    'icon'    => 'far fa-address-book',
+                    // 'submenu' => [
+                    //     [
+                    //         'text' => 'level_two',
+                    //         'url'  => '#',
+                    //     ],
+                    //     [
+                    //         'text'    => 'level_two',
+                    //         'url'     => '#',
+                    //         'submenu' => [
+                    //             [
+                    //                 'text' => 'level_three',
+                    //                 'url'  => '#',
+                    //             ],
+                    //             [
+                    //                 'text' => 'level_three',
+                    //                 'url'  => '#',
+                    //             ],
                             ],
                         ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    // ],
                 ],
             ],
-        ],
+        
         ['header' => 'labels'],
         [
             'text'       => 'important',
@@ -332,7 +330,7 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
-    ],
+    
 
     /*
     |--------------------------------------------------------------------------
