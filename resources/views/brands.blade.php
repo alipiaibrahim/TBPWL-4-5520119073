@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    {{ __('Brands Setting') }}
+                    {{ __('Pengelolaan Brand/Merek') }}
 
                 </div>
                 <div class="card-body">

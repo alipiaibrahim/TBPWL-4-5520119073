@@ -242,22 +242,23 @@ return [
             'can'         => ['isUser', 'isAdmin']
         ],
         [
-            'text'        => 'Pengelolaan Obat',
-            'url'         => 'admin/drugs',
-            'icon'        => 'fas fa-clinic-medical',
-            'can'         => ['isUser', 'isAdmin']
-        ],
-        [
+
             'text'        => 'Kategori Obat',
             'url'         => 'admin/kategori',
             'icon'        => 'fas fa-book-reader',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
         ],
         [
             'text'        => 'Brand/Merek Obat',
             'url'         => 'admin/merek',
             'icon'        => 'fas fa-chalkboard',
-            'can'         => 'isAdmin',
+            'can'         => ['isUser', 'isAdmin']
+        ],
+        [
+            'text'        => 'Pengelolaan Obat',
+            'url'         => 'admin/drugs',
+            'icon'        => 'fas fa-clinic-medical',
+            'can'         => ['isUser', 'isAdmin']
         ],
         // [
         //     'text'        => 'pages',
