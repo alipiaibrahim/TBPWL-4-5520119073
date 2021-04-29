@@ -171,7 +171,7 @@ class DrugController extends Controller
 
     }
 
-        public function delete_drug(Request $req)
+    public function delete_drug(Request $req)
     {
         $drug = Drug::find($req->get('id'));
 

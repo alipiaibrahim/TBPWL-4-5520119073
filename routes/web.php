@@ -6,6 +6,7 @@ use App\Http\Controllers\DrugController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::get('admin/home', [AdminController::class, 'index'])
     ->name('admin.home');
     // ->middleware('is_admin');
 
-//PENGELOLAAN BUKU
+//PENGELOLAAN OBAT
 Route::get('admin/drugs', [DrugController::class, 'index'])
     ->name('admin.drugs');
     // ->middleware('is_admin');
@@ -45,13 +46,14 @@ Route::post('admin/drugs', [DrugController::class, 'submit_drug'])
     ->name('admin.drug.submit');
     // ->middleware('is_admin');
 
-//UPDATE BOOK
+//UPDATE OBAT
 Route::patch('admin/drugs/update', [DrugController::class, 'update'])
     ->name('admin.drug.update');
     // ->middleware('is_admin');
 
 Route::get('admin/ajaxadmin/dataDrug/{id}', [DrugController::class, 'getDataDrug']);
 
+// DELETE OBAT
 Route::delete('admin/drugs/delete', [DrugController::class, 'destroy'])
     ->name('admin.drug.delete');
     // ->middleware('is_admin');
@@ -96,4 +98,29 @@ Route::get('admin/ajaxadmin/dataCategories/{id}', [CategoriesController::class, 
 //route delete categories
 Route::delete('admin/kategori/delete', [CategoriesController::class, 'delete_categories'])
     ->name('admin.kategori.delete');
+    // ->middleware('is_admin');
+
+//PENGELOLAAN USER
+Route::get('admin/users', [UserController::class, 'index'])
+    ->name('admin.users');
+    // ->middleware('is_admin');
+
+Route::post('admin/users', [UserController::class, 'store'])
+    ->name('admin.pengguna.submit');
+    // ->middleware('is_admin');
+
+Route::post('admin/users', [UserController::class, 'submit_user'])
+    ->name('admin.pengguna.submit');
+    // ->middleware('is_admin');
+
+//UPDATE USER
+Route::patch('admin/users/update', [UserController::class, 'update'])
+    ->name('admin.pengguna.update');
+    // ->middleware('is_admin');
+
+Route::get('admin/ajaxadmin/dataUser/{id}', [UserController::class, 'getDataUser']);
+
+// DELETE USER
+Route::delete('admin/users/delete', [UserController::class, 'destroy'])
+    ->name('admin.pengguna.delete');
     // ->middleware('is_admin');

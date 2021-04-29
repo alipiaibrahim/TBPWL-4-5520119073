@@ -237,7 +237,7 @@ return [
         ],
         [
             'text'        => 'User',
-            'url'         => '',
+            'url'         => 'admin/users',
             'icon'        => 'far fa-address-card',
             'can'         => ['isUser', 'isAdmin']
         ],
