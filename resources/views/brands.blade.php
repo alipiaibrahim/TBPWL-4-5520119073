@@ -80,8 +80,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
             </div>
         </div>
@@ -120,8 +120,8 @@
             <div class="modal-footer">
                 <input type="hidden" name="id" id="edit-id" />
 
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <button type="submit" class="btn btn-success">Update Data</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-success">Update</button>
                 </form>
             </div>
         </div>
@@ -148,7 +148,7 @@
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="id" id="delete-id" value="" />
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
             </div>

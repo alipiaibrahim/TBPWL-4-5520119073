@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <button class="btn btn-primary float-left mr-3" data-toggle="modal" data-target="#modalTambahData"><i class="fa fa-plus"></i> Tambah Data</button>
 
-                    {{-- <div class="btn-group mb-5" role="group" aria-label="Basis Example"> --}}
+                    <div class="btn-group mb-5" role="group" aria-label="Basis Example">
 
                     </div>
                     <table id="table-data" class="table table-borderer display nowrap" style="width:100%">
@@ -83,7 +83,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <button type="submit" class="btn btn-primary">Tambah</button>
                 </form>
             </div>
@@ -126,8 +126,8 @@
             <div class="modal-footer">
                 <input type="hidden" name="id" id="edit-id" />
 
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Update Data</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-success">Update</button>
                 </form>
             </div>
         </div>
@@ -147,14 +147,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                Apakah anda yakin akan menghapus data Kategori <strong class="font-italic" id="delete-nama"></strong>?
+                Apakah anda yakin akan menghapus data Kategori <strong class="font-bold" id="delete-nama"></strong>?
                 <form method="post" action="{{ route('admin.kategori.delete') }}" enctype="multipart/form-data">
                     @csrf
                     @method('DELETE')
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="id" id="delete-id" value="" />
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
             </div>

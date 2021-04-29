@@ -18,7 +18,7 @@
                 </div>
                     <div class="card-body">
                       <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahDrugModal"><i class="fa fa-plus"></i> Tambah Data</button>
-                      {{-- <div class="btn-group mb-5" role="group" aria-label="Basis Example"> --}}
+                      <div class="btn-group mb-5" role="group" aria-label="Basis Example">
                       </div>
                         <table id="table-data" class="table table-borderer display nowrap" style="width:100%">
                             <thead>
@@ -113,8 +113,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-          <button type="submit" class="btn btn-primary">Kirim</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
           </form>
         </div>
       </div>
@@ -174,7 +174,7 @@
         <div class="modal-footer">
           <input type="hidden" name="id" id="edit-id"/>
           <input type="hidden" name="old_cover" id="edit-old-cover"/>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-success">Update</button>
           </form>
         </div>
@@ -199,7 +199,7 @@
         <div class="modal-footer">
           <input type="hidden" name="id" id="delete-id" value=""/>
           <input type="hidden" name="old_cover" id="delete-old-cover"/>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
           <button type="submit" class="btn btn-danger">Hapus</button>
         </div>
         {{-- <div class="card-body">
