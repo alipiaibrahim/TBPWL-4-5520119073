@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Categorie;
 use PDF;
+use Carbon\Carbon;
+use Order;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,89 +26,32 @@ class HomeController extends Controller
         return view('home', compact('user'));
     }
 
-//     public function submit_drug(Request $req)
-//     {
-//         $drug = new Drug;
-
-//         $drug->namaObat = $req->get('namaObat');
-//         $drug->jenis = $req->get('jenis');
-//         $drug->brand = $req->get('brand');
-//         $drug->stok = $req->get('stok');
-//         $drug->harga = $req->get('harga');
-
-//         if ($req->hasFile('cover')) {
-//             $extension = $req->file('cover')->extension();
-
-//             $filename = 'cover_drug' . time() . '.' . $extension;
-//             $req->file('cover')->storeAs(
-//                 'public/cover_drug',
-//                 $filename
-//             );
-
-//             $drug->cover = $filename;
-//         }
-//         $drug->save();
-
-//         $notification = array(
-//             'message' => 'Data Obat berhasil ditambahkan',
-//             'alert-type' => 'success'
-//         );
-
-//         return redirect()->route('user.drugs')->with($notification);
-//     }
-
-// public function update_drug(Request $req)
-//     {
-//         $drug = Drug::find($req->get('id'));
-
-//         $drug->namaObat = $req->get('namaObat');
-//         $drug->jenis = $req->get('jenis');
-//         $drug->brand = $req->get('brand');
-//         $drug->stok = $req->get('stok');
-//         $drug->harga = $req->get('harga');
-
-//         if ($req->hasFile('cover')) {
-//             $extension = $req->file('cover')->extension();
-
-//             $filename = 'cover_drug' . time() . '.' . $extension;
-//             $req->file('cover')->storeAs(
-//                 'public/cover_drug',
-//                 $filename
-//             );
-//             Storage::delete('public/cover_drug/'.$req->get('old_cover'));
-
-//             $drug->cover = $filename;
-//         }
-//         $drug->save();
-
-//         $notification = array(
-//             'message' => 'Data Obat berhasil diubah',
-//             'alert-type' => 'success'
-//         );
-
-//         return redirect()->route('user.drugs')->with($notification);
-//     }
-
-//     public function delete_drug(Request $req)
-//     {
-//         $drug = Drug::find($req->get('id'));
-
-//         storage::delete('public/cover_drug/'.$req->get('old_cover'));
-
-//         $drug->delete();
-
-//         $notification = array(
-//             'message' => 'Data Obat Berhasil Dihapus',
-//             'alert-type' => 'succes'
-//         );
-
-//         return redirect()->route('user.drugs')->with($notification);
-//     }
-//     public function print_drugs()
-//     {
-//         $drugs = Drug::all();
-
-//         $pdf = PDF::loadview('print_drugs', ['drugs' => $drugs]);
-//         return $pdf->download('data_drug.pdf');
-//     }
+    public function getChart()
+    {
+        //MENGAMBIL TANGGAL 7 HARI YANG TELAH LALU DARI TANGGAL HARI INI
+        $start = Carbon::now()->subWeek()->addDay()->format('Y-m-d') . ' 00:00:01';
+        //MENGAMBIL TANGGAL HARI INI
+        $end = Carbon::now()->format('Y-m-d') . ' 23:59:00';
+        
+        //SELECT DATA KAPAN RECORDS DIBUAT DAN JUGA TOTAL PESANAN
+        $order = Order::select(DB::raw('date(created_at) as order_date'), DB::raw('count(*) as total_order'))
+            //DENGAN KONDISI ANTARA TANGGAL YANG ADA DI VARIABLE $start DAN $end 
+            ->whereBetween('created_at', [$start, $end])
+            //KEMUDIAN DI KELOMPOKKAN BERDASARKAN TANGGAL
+            ->groupBy('created_at')
+            ->get()->pluck('total_order', 'order_date')->all();
+        
+        //LOOPING TANGGAL DENGAN INTERVAL SEMINGGU TERAKHIR
+        for ($i = Carbon::now()->subWeek()->addDay(); $i <= Carbon::now(); $i->addDay()) {
+            //JIKA DATA NYA ADA 
+            if (array_key_exists($i->format('Y-m-d'), $order)) {
+                //MAKA TOTAL PESANANNYA DI PUSH DENGAN KEY TANGGAL
+                $data[$i->format('Y-m-d')] = $order[$i->format('Y-m-d')];
+            } else {
+                //JIKA TIDAK, MASUKKAN NILAI 0
+                $data[$i->format('Y-m-d')] = 0;
+            }
+        }
+        return response()->json($data);
+    }
 }

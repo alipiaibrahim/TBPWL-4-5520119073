@@ -12,10 +12,66 @@
     @else
         Anda Login Sebagai User
     @endif
-    <div>
-        <img src="{{ '../vendor/adminlte/dist/img/kapsul.jpg' }}" class="img-fluid" alt="...">
+{{-- @stop --}}
+<section class="content" id="dw">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>0</h3>
+                        <p>Produk</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    
+                </div>
+            </div>
+​            <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>0</h3>
+                        <p>Pesanan</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>0</h3>
+                        <p>Pelanggan</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>0</h3>
+                        <p>Karyawan</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- CHART.JS MEMINTA ELEMENT YANG MEMILIKI ID dw-chart -->
+            <canvas id="dw-chart"></canvas>
+        </div>
     </div>
-@stop
+</section>
+</div>
+@endsection
 
 @section('footer')
     <div class="float-right d-none d-sm-block">
@@ -29,6 +85,11 @@
 @section('css')
         <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
+
+@section('js')
+    <!-- LOAD FILE dashboard.js -->
+    <script src="{{ asset('js/dashboard.js') }}"></script>
+@endsection
 
 @section('js')
         <script>console.log ('Hi!')</script>

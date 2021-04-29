@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DrugController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Auth::routes();
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/chart', [App\Http\Controllers\HomeController::class, 'getChart'])->name('chart');
 
 Route::get('admin/home', [AdminController::class, 'index'])
     ->name('admin.home');
