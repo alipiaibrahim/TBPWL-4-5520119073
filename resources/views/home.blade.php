@@ -21,7 +21,7 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h3>0</h3>
-                        <p>Produk</p>
+                        <p>Kategori</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -33,7 +33,7 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h3>0</h3>
-                        <p>Pesanan</p>
+                        <p>Merek</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -45,7 +45,7 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>0</h3>
-                        <p>Pelanggan</p>
+                        <p>Barang</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -56,13 +56,17 @@
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <h3>0</h3>
-                        <p>Karyawan</p>
+                        <p>User</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
                 </div>
             </div>
+        </div>
+        <br/>
+        <div>
+            <img src="{{ '../vendor/adminlte/dist/img/apotekna.jpg' }}" class="img-fluid" style="width:950px;height:500px;">
         </div>
         <div class="row">
             <!-- CHART.JS MEMINTA ELEMENT YANG MEMILIKI ID dw-chart -->

@@ -58,6 +58,7 @@ Route::delete('admin/drugs/delete', [DrugController::class, 'destroy'])
     ->name('admin.drug.delete');
     // ->middleware('is_admin');
 
+
 //BRANDS
 Route::get('admin/merek', [App\Http\Controllers\BrandsController::class, 'index'])
     ->name('admin.merek');
@@ -79,6 +80,7 @@ Route::delete('admin/merek/delete', [BrandsController::class, 'delete_brands'])
     ->name('admin.brand.delete');
     // ->middleware('is_admin');
 
+    
 // KATEGORI
 Route::get('admin/kategori', [CategoriesController::class, 'index'])
     ->name('admin.kategori');
