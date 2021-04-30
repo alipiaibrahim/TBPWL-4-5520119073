@@ -71,7 +71,7 @@ class DrugController extends Controller
         if ($req->hasFile('cover')) {
             $extension = $req->file('cover')->extension();
 
-            $filename = 'cover_drug' . time() . '.' . $extension;
+            $filename = 'cover_drug_' . time() . '.' . $extension;
             $req->file('cover')->storeAs(
                 'public/cover_drug',
                 $filename

@@ -90,13 +90,36 @@
                   <input type="text" class="form-control" name="jenis" id="jenis" required/>
               </div>
               <div class="form-group">
+                  <label for="categories">Kategori</label>
+                  <select id="categories" name="categories">
+                        <option Masukkan ID kategori>Masukkan Id kategori</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                  </select>
+              </div>
+              {{-- <div class="form-group">
                 <label for="categories">Kategori</label>
-                <input type="text" class="form-control" name="categories" id="categories" required/>
+                <input type="text" class="form-control" name="categories" id="categories" required/> --}}
+              {{-- <div class="input-group" name="categories" id="categories">
+                <select class="custom-select" placeholder="Masukkan kategori" id="inputGroupSelectId" aria-label="Example select with button addon">
+                  <option selected>Kategori</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                </select>
+              </div> --}}
+              {{-- </div> --}}
+              <div class="form-group">
+                <label for="brands">Brand ID</label>
+                <select id="brands" name="brands">
+                      <option Masukkan ID kategori>Masukkan Id brand</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                </select>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
               <label for="brands">Brand</label>
               <input type="text" class="form-control" name="brands" id="brands" required/>
-            </div>
+            </div> --}}
               <div class="form-group">
                   <label for="stok">Jumlah</label>
                   <input type="text" class="form-control" name="stok" id="stok" required/>

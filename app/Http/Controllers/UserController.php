@@ -158,7 +158,7 @@ class UserController extends Controller
         $pengguna->delete();
      
         $notification = array(
-            'message' => 'Data Obat berhasil dihapus',
+            'message' => 'Data User berhasil dihapus',
             'alert-type' => 'success'
         );
 
@@ -175,7 +175,7 @@ class UserController extends Controller
         $pengguna->delete();
 
         $notification = array(
-            'message' => 'Data Obat Berhasil Dihapus',
+            'message' => 'Data User Berhasil Dihapus',
             'alert-type' => 'succes'
         );
 

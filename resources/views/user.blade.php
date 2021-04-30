@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
         <div class="card">
@@ -20,7 +20,7 @@
                       <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
                       <div class="btn-group mb-5" role="group" aria-label="Basis Example">
                       </div>
-                        <table id="table-data" class="table table-borderer display nowrap" style="width:100%">
+                        <table id="table-data" class="table table-bordered display nowrap" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -45,8 +45,8 @@
                                     <td>{{ $pengguna->roles_id }}</td>
                                     
                                     <td>
-                                    @if($pengguna->cover !== null)
-                                        <img src="{{asset('storage/photo_user/'.$drug->cover) }}" width="100px"/>
+                                    @if($pengguna->phote !== null)
+                                        <img src="{{asset('storage/photo_user/'.$pengguna->photo) }}" width="100px"/>
                                     @else
                                         [gambar tidak tersedia]
                                     @endif
@@ -59,19 +59,22 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                           </tbody>
-                       </table>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
 
    <div class="modal fade" id="tambahUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Data Obat</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

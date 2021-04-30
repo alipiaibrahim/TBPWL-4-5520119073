@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -102,27 +102,28 @@ Route::delete('admin/kategori/delete', [CategoriesController::class, 'delete_cat
     ->name('admin.kategori.delete');
     // ->middleware('is_admin');
 
+    
 //PENGELOLAAN USER
 Route::get('admin/users', [UserController::class, 'index'])
-    ->name('admin.users');
-    // ->middleware('is_admin');
+    ->name('admin.users')
+    ->middleware('is_admin');
 
 Route::post('admin/users', [UserController::class, 'store'])
-    ->name('admin.pengguna.submit');
-    // ->middleware('is_admin');
+    ->name('admin.pengguna.submit')
+    ->middleware('is_admin');
 
 Route::post('admin/users', [UserController::class, 'submit_user'])
-    ->name('admin.pengguna.submit');
-    // ->middleware('is_admin');
+    ->name('admin.pengguna.submit')
+    ->middleware('is_admin');
 
 //UPDATE USER
 Route::patch('admin/users/update', [UserController::class, 'update'])
-    ->name('admin.pengguna.update');
-    // ->middleware('is_admin');
+    ->name('admin.pengguna.update')
+    ->middleware('is_admin');
 
 Route::get('admin/ajaxadmin/dataUser/{id}', [UserController::class, 'getDataUser']);
 
 // DELETE USER
 Route::delete('admin/users/delete', [UserController::class, 'destroy'])
-    ->name('admin.pengguna.delete');
-    // ->middleware('is_admin');
+    ->name('admin.pengguna.delete')
+    ->middleware('is_admin');
