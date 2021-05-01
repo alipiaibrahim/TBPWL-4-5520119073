@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-group">
                         <p style="font-style: italic;">*Note: </p>
-                        <p style="font-style: italic;">   Penulisan tanggal itu mulai dari tahun misal 20210304 akan muncul output 2021-03-04</p>
+                        <p style="font-style: italic;">Penulisan tanggal itu mulai dari tahun misal 2021-03-04 akan muncul output 2021-03-04</p>
                         <p style="font-style: italic;">Penamaan obat dilihat di Pengelolaan Barang</p>
                     </div>
             </div>

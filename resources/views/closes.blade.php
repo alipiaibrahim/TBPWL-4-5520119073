@@ -82,7 +82,7 @@
                         <input type="text" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
                     </div>
                     <div class="form-group">
-                        <p style="font-style: italic;">*Note: Penulisan tanggal itu mulai dari tahun misal 20210304 akan muncul output 2021-03-04</p>
+                        <p style="font-style: italic;">*Note: Penulisan tanggal itu mulai dari tahun misal 2021-03-04 akan muncul output 2021-03-04</p>
                     </div>
             </div>
             <div class="modal-footer">

@@ -236,6 +236,12 @@ return [
             'can'         => ['isUser', 'isAdmin']
         ],
         [
+            'text'        => 'Konsultasi',
+            'url'         => '/consultation',
+            'icon'        => 'fas fa-comments',
+            'can'         => ['isUser', 'isAdmin']
+        ],
+        [
             'text'        => 'User',
             'url'         => 'admin/users',
             'icon'        => 'far fa-address-card',

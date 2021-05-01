@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClosesController;
 use App\Http\Controllers\ComesController;
+use App\Http\Controllers\ConsultationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/consultation', [App\Http\Controllers\ConsultationController::class, 'index'])->name('consultation');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/chart', [App\Http\Controllers\HomeController::class, 'getChart'])->name('chart');
