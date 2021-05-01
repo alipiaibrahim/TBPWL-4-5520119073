@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClosesController;
+use App\Http\Controllers\ComesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,21 +134,43 @@ Route::delete('admin/users/delete', [UserController::class, 'destroy'])
 
 // BARANG KELUAR
 Route::get('admin/keluar', [ClosesController::class, 'index'])
-    ->name('admin.keluar');
-    // ->middleware('is_admin');
+    ->name('admin.keluar')
+    ->middleware('is_admin');
 
 // route tambah barang keluar
 Route::post('admin/keluar', [ClosesController::class, 'tambah_closes'])
-    ->name('admin.keluar.submit');
-    // ->middleware('is_admin');
+    ->name('admin.keluar.submit')
+    ->middleware('is_admin');
 
 //route edit barang keluar
 Route::patch('admin/keluar/update', [ClosesController::class, 'update_closes'])
-    ->name('admin.keluar.update');
-    // ->middleware('is_admin');
+    ->name('admin.keluar.update')
+    ->middleware('is_admin');
 Route::get('admin/ajaxadmin/dataCloses/{id}', [ClosesController::class, 'getDataCloses']);
 
 //route delete barang keluar
 Route::delete('admin/keluar/delete', [ClosesController::class, 'delete_closes'])
-    ->name('admin.keluar.delete');
-    // ->middleware('is_admin');
+    ->name('admin.keluar.delete')
+    ->middleware('is_admin');
+
+
+// BARANG MASUK
+Route::get('admin/masuk', [ComesController::class, 'index'])
+    ->name('admin.masuk')
+    ->middleware('is_admin');
+
+// route tambah barang masuk
+Route::post('admin/masuk', [ComesController::class, 'tambah_comes'])
+    ->name('admin.masuk.submit')
+    ->middleware('is_admin');
+
+//route edit barang masuk
+Route::patch('admin/masuk/update', [ComesController::class, 'update_comes'])
+    ->name('admin.masuk.update')
+    ->middleware('is_admin');
+Route::get('admin/ajaxadmin/dataComes/{id}', [ComesController::class, 'getDataComes']);
+
+//route delete barang masuk
+Route::delete('admin/masuk/delete', [ComesController::class, 'delete_comes'])
+    ->name('admin.masuk.delete')
+    ->middleware('is_admin');

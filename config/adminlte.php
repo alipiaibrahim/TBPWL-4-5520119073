@@ -287,7 +287,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Laporan Obat Masuk',
-                    'url'  => '',
+                    'url'  => 'admin/masuk',
                     'icon' => 'fas fa-address-book',
                 ],
                 [

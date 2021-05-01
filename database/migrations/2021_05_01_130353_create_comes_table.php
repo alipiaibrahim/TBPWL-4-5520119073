@@ -17,7 +17,7 @@ class CreateComesTable extends Migration
             $table->id();
             $table->string('nama');
             $table->foreign('nama')->references('nama')->on('drugs');
-            $table->year('tanggal');
+            $table->date('tanggal');
             $table->string('jumlah');
             $table->timestamps();
         });
