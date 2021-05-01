@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Pengelolaan Obat')
+@section('title', 'Pengelolaan User')
 
 @section('content_header')
-    <h1>Pengelolaan User</h1>
+  <h1 class="text-center text-bold" style="font-family:Arial, Helvetica, sans-serif">PENGELOLAAN USER</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
                        {{-- <button class="btn btn-secondary float-right" data-toggle="modal"><a href="{{ route('admin.print.drugs') }}" target="_blank"><i class="fa fa-print"></i> Cetak PDF</a></button> --}}
                 </div>
                     <div class="card-body">
-                      <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
+                      <button class="btn btn-primary float-left mr-3" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
                       <div class="btn-group mb-5" role="group" aria-label="Basis Example">
                       </div>
                       <div class="table-responsive">
@@ -221,8 +221,20 @@
       </div>
     </div>
   </div>
-
+  <br/>
+  <br/>
 @stop
+
+@section('footer')
+  <div class="footer" style="text-align: center; color: black;">
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.0
+    </div>
+    <strong>&copy;
+    <a href="https://www.instagram.com/ibr.pia/" target="_blank">APOLIA {{date('Y')}}</a>.</strong> All Right reserved.
+  </div>
+@stop
+
 @section('css')
     <style>
         input[type=text], select, textarea {

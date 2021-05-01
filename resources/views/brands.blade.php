@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Merek')
+@section('title', 'Pengdelolaan Merek')
 
 @section('content_header')
-<h1 class="text-center text-bold">MEREK/BRAND</h1>
+    <h1 class="text-center text-bold" style="font-family:Arial, Helvetica, sans-serif">PENGELOLAAN BRAND/MEREK</h1>
 @stop
 
 @section('content')

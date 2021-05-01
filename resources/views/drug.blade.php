@@ -3,7 +3,7 @@
 @section('title', 'Pengelolaan Obat')
 
 @section('content_header')
-    <h1>Pengelolaan Obat</h1>
+<h1 class="text-center text-bold" style="font-family:Arial, Helvetica, sans-serif">PENGELOLAAN OBAT</h1>
 @stop
 
 @section('content')

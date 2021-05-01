@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>APOTEK ALIPIA</h1>
+    <h1 class="text-center text-bold" style="font-family:Arial, Helvetica, sans-serif">APOTEK ALIPIA IBRAHIM</h1>
 @stop
 
 @section('content')

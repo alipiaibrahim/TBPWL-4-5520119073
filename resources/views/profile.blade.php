@@ -3,7 +3,7 @@
 @section('title', 'Pengaturan Profile')
 
 @section('content_header')
-    <h1 style="text-align: center; font-family:Arial, Helvetica, sans-serif"><strong> Pengaturan Profile</strong></h1>
+    <h1 class="text-center text-bold" style="font-family:Arial, Helvetica, sans-serif">AKUN PROFILE</h1>
 @stop
 
 @section('content')
@@ -113,6 +113,8 @@
         </div>
     </div>
 </div>
+<br/>
+<br/>
 @stop
 
 @section('footer')
