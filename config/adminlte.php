@@ -260,6 +260,12 @@ return [
             'icon'        => 'fas fa-chalkboard',
             'can'         => ['isUser', 'isAdmin']
         ],
+        [
+            'text'        => 'Profile',
+            'url'         => '/profile',
+            'icon'        => 'far fa-address-card',
+            'can'         => ['isUser']
+        ],
 
         // [
         //     'text'        => 'pages',

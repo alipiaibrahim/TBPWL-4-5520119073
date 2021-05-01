@@ -7,6 +7,7 @@ use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,3 +128,4 @@ Route::get('admin/ajaxadmin/dataUser/{id}', [UserController::class, 'getDataUser
 Route::delete('admin/users/delete', [UserController::class, 'destroy'])
     ->name('admin.pengguna.delete')
     ->middleware('is_admin');
+ 
