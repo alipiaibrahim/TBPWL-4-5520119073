@@ -18,8 +18,8 @@
                                         <input type="text" class="form-control" id="inputTanggal" placeholder="Masukkan username">
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputCity">Email</label>
-                                    <input type="text" class="form-control" id="inputCity" placeholder="Masukkan email">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="text" class="form-control" id="inputEmail" placeholder="Masukkan email">
                                 </div>
                                 <div class="form-group">
                                     <label for="pesan">Pesan</label>
