@@ -37,7 +37,7 @@ class ComesController extends Controller
     //proses ajax
     public function getDataComes($id)
     {
-        $masuk = Closes::find($id);
+        $masuk = Comes::find($id);
 
         return response()->jsonp($masuk);
     }
@@ -45,7 +45,7 @@ class ComesController extends Controller
     public function update_comes(Request $req)
     {
 
-        $masuk = Closes::find($req->get('id'));
+        $masuk = Comes::find($req->get('id'));
 
         $masuk->nama = $req->get('nama');
         $masuk->tanggal = $req->get('tanggal');
@@ -63,7 +63,7 @@ class ComesController extends Controller
 
     public function delete_comes(Request $req)
     {
-        $masuk = Closes::find($req->get('id'));
+        $masuk = Comes::find($req->get('id'));
 
         $masuk->delete();
 
