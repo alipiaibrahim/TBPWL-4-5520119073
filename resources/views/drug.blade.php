@@ -110,7 +110,7 @@
               <input type="text" class="form-control" name="brands" id="brands" required/>
             </div> --}}
               <div class="form-group">
-                  <label for="stok">Jumlah</label>
+                  <label for="stok">Stok</label>
                   <input type="text" class="form-control" name="stok" id="stok" required/>
               </div>
               <div class="form-group">
@@ -173,7 +173,7 @@
                   </select>
               </div>
                   <div class="form-group">
-                      <label for="edit-stok">Jumlah</label>
+                      <label for="edit-stok">Stok</label>
                       <input type="text" class="form-control" name="stok" id="edit-stok" required/>
                   </div>
                   <div class="form-group">

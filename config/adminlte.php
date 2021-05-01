@@ -287,12 +287,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Laporan Obat Masuk',
-                    'url'  => '#',
+                    'url'  => '',
                     'icon' => 'fas fa-address-book',
                 ],
                 [
                     'text'    => 'Laporan Obat Keluar',
-                    'url'     => '#',
+                    'url'     => 'admin/keluar',
                     'icon'    => 'far fa-address-book',
                     // 'submenu' => [
                     //     [
