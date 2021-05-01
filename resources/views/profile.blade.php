@@ -3,7 +3,7 @@
 @section('title', 'Pengaturan Profile')
 
 @section('content_header')
-    <h1>Pengaturan Profile</h1>
+    <h1 style="text-align: center; font-family:Arial, Helvetica, sans-serif"><strong> Pengaturan Profile</strong></h1>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <img src="{{ '../vendor/adminlte/dist/img/foto.png' }}" class="img-fluid" style="border-radius:100%;display:block;margin-left: auto;margin-right: auto; width:150px; height:130px;">
+                                <img src="{{ '../vendor/adminlte/dist/img/foto.png' }}" class="img-fluid" style="border-radius:100%;display:block;margin-left: auto;margin-right: auto; width:170px; height:155px;">
                             </div>
                             <br/>
                             <br/>
@@ -116,12 +116,13 @@
 @stop
 
 @section('footer')
+<div class="footer" style="text-align: center; color:black;">
     <div class="float-right d-none d-sm-block">
-        <b>Version</b> 1.0.0
+        <b>Version</b> 3.0.0
     </div>
-    <strong>CopyRight &copy; {{date('Y')}}
-    <a href="http://ft.unsur.ac.id/" target="_blank">Fakultas Teknik,
-    Universitas Suryakancana</a>.</strong> All Right reserved
+    <strong>&copy;
+    <a href="https://www.instagram.com/ibr.pia/" target="_blank">APOLIA {{date('Y')}}</a>.</strong> All Right reserved.
+</div>
 @stop
 
 @section('css')

@@ -78,12 +78,13 @@
 @endsection
 
 @section('footer')
+  <div class="footer" style="text-align: center; color: black;">
     <div class="float-right d-none d-sm-block">
-        <b>Version</b> 1.0.0
+        <b>Version</b> 3.0.0
     </div>
-    <strong>CopyRight &copy; {{date('Y')}}
-    <a href="http://ft.unsur.ac.id/" target="_blank">Fakultas Teknik,
-    Universitas Suryakancana</a>.</strong> All Right reserved
+    <strong>&copy;
+    <a href="https://www.instagram.com/ibr.pia/" target="_blank">APOLIA {{date('Y')}}</a>.</strong> All Right reserved.
+  </div>
 @stop
 
 @section('css')

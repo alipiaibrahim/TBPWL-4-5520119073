@@ -161,8 +161,16 @@
         </div>
     </div>
 </div>
+@stop
 
-<!-- Modal Hapus Data -->
+@section('footer')
+  <div class="footer" style="text-align: center; color: black;">
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.0
+    </div>
+    <strong>&copy;
+    <a href="https://www.instagram.com/ibr.pia/" target="_blank">APOLIA {{date('Y')}}</a>.</strong> All Right reserved.
+  </div>
 @stop
 
 @section('js')

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
         <div class="card">
@@ -20,7 +20,8 @@
                       <button class="btn btn-primary float-left" data-toggle="modal" data-target="#tambahUserModal"><i class="fa fa-plus"></i> Tambah Data</button>
                       <div class="btn-group mb-5" role="group" aria-label="Basis Example">
                       </div>
-                        <table id="table-data" class="table table-bordered display nowrap" style="width:100%">
+                      <div class="table-responsive">
+                        <table id="table-data" class="table">
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -62,6 +63,7 @@
                             </tbody>
                         </table>
                       </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,10 +100,18 @@
               <label for="password">Password</label>
               <input type="text" class="form-control" name="password" id="password" required/>
             </div>
-              <div class="form-group">
+            <div class="form-group">
+              <label for="roles_id">Roles ID</label>
+              <select id="roles_id" name="roles_id">
+                    <option selected>Pilih</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+              </select>
+          </div>
+              {{-- <div class="form-group">
                   <label for="roles_id">Roles</label>
                   <input type="text" class="form-control" name="roles_id" id="roles_id" required/>
-              </div>
+              </div> --}}
             
               <div class="form-group">
                   <label for="photo">Photo</label>
@@ -149,11 +159,18 @@
                   <label for="edit-password">Password</label>
                   <input type="text" class="form-control" name="password" id="edit-password" required/>
                 </div>
-                  <div class="form-group">
+                <div class="form-group">
+                  <label for="edit-roles_id">Roles ID</label>
+                  <select id="edit-roles_id" name="roles_id">
+                        <option selected>Pilih</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                  </select>
+              </div>
+                  {{-- <div class="form-group">
                       <label for="edit-roles_id">Roles</label>
                       <input type="text" class="form-control" name="roles_id" id="edit-roles_id" required/>
-                  </div>
-                  
+                  {{-- </div> --}}
               </div>
               <div class="col-md-6">
                   <div class="form-group" id="image-area"></div>
