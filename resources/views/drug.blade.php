@@ -91,19 +91,43 @@
               </div>
               <div class="form-group">
                   <label for="categories">Kategori</label>
-                  <select id="categories" name="categories">
+                  <div class="input-group">
+                    <select name="categories" id="categories" placeholder="Input Categories" aria-label="Example select with button addon">
+                      <option selected>Pilih....</option>
+                      @php
+                      $data=App\Models\Categories::get();
+                      @endphp
+                      @foreach($data as $key)
+                      <option value="{{$key->id}}">{{$key->nama}}</option>
+                      @endforeach
+                    </select>
+      
+                  </div>
+                  {{-- <select id="categories" name="categories">
                         <option selected>Pilih...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
-                  </select>
+                  </select> --}}
               </div>
               <div class="form-group">
-                <label for="brands">Brand ID</label>
-                <select id="brands" name="brands">
+                <label for="penerbit">Brand ID</label>
+                <div class="input-group">
+                  <select name="brands" id="brands" placeholder="Input Brands" aria-label="Example select with button addon">
+                    <option selected>Pilih....</option>
+                    @php
+                    $data=App\Models\Brands::get();
+                    @endphp
+                    @foreach($data as $key)
+                    <option value="{{$key->id}}">{{$key->brand}}</option>
+                    @endforeach
+                  </select>
+    
+                </div>
+                {{-- <select id="brands" name="brands">
                       <option selected>Pilih</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
-                </select>
+                </select> --}}
             </div>
             {{-- <div class="form-group">
               <label for="brands">Brand</label>
@@ -158,19 +182,32 @@
                   </div>
                   <div class="form-group">
                     <label for="edit-categories">Kategori ID</label>
-                    <select id="edit-categories" name="categories">
-                          <option selected>Pilih</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                    </select>
+                    <div class="input-group">
+                      <select name="categories" id="edit-categories" placeholder="Input Categories" aria-label="Example select with button addon">
+                        <option selected>Pilih....</option>
+                        @php
+                        $data=App\Models\Categories::get();
+                        @endphp
+                        @foreach($data as $key)
+                        <option value="{{$key->id}}">{{$key->nama}}</option>
+                        @endforeach
+                      </select>
+                    </div>
                 </div>
                 <div class="form-group">
                   <label for="edit-brands">Brand ID</label>
-                  <select id="edit-brands" name="brands">
-                        <option selected>Pilih</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                  </select>
+                  <div class="input-group">
+                    <select name="brands" id="edit-brands" placeholder="Input Brands" aria-label="Example select with button addon">
+                      <option selected>Pilih....</option>
+                      @php
+                      $data=App\Models\Brands::get();
+                      @endphp
+                      @foreach($data as $key)
+                      <option value="{{$key->id}}">{{$key->brand}}</option>
+                      @endforeach
+                    </select>
+      
+                  </div>
               </div>
                   <div class="form-group">
                       <label for="edit-stok">Stok</label>

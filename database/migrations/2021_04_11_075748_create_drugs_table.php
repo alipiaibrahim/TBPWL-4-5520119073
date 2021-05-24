@@ -14,14 +14,14 @@ class CreateDrugsTable extends Migration
     public function up()
     {
         Schema::create('drugs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('nama')->unique();
             $table->string('jenis');
             
-            $table->bigInteger('categories')->unsigned();
-            $table->bigInteger('brands')->unsigned();
-            $table->foreign('categories')->references('id')->on('categories');
-            $table->foreign('brands')->references('id')->on('brands');
+            // $table->bigInteger('categories')->unsigned();
+            // $table->bigInteger('brands')->unsigned();
+            $table->foreignId('categories')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('brands')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('stok');
             $table->string('harga');
             $table->string('cover')->nullable();
