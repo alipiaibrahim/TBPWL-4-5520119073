@@ -139,8 +139,13 @@
               </div>
               <div class="form-group">
                   <label for="harga">Harga</label>
-                  <input type="text" class="form-control" name="harga" id="harga" required/>
-              </div>
+                  <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Rp.</span>
+                      <input type="text" class="form-control" name="harga" id="harga" required/>
+                    </div>
+                  </div>
+                </div>
             
               <div class="form-group">
                   <label for="cover">Gambar</label>
@@ -213,10 +218,9 @@
                   </div>
                   <div class="form-group">
                       <label for="edit-harga">Harga</label>
-                      <input type="number" class="form-control" name="harga" id="edit-harga" required/>
+                        <input type="number" class="form-control" name="harga" id="edit-harga" required/>
+                      </div>
                   </div>
-                  
-              </div>
               <div class="col-md-6">
                   <div class="form-group" id="image-area"></div>
                   <div class="form-group">
