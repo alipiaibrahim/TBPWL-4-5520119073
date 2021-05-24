@@ -17,7 +17,7 @@ class CreateComesTable extends Migration
             $table->id();
             // $table->string('nama');
             // $table->foreign('nama')->references('nama')->on('drugs');
-            $table->foreignId('categories')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('nama')->references('id')->on('drugs')->onDelete('cascade')->onUpdate('cascade');
             $table->date('tanggal');
             $table->string('jumlah');
             $table->timestamps();

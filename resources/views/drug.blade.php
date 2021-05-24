@@ -184,7 +184,6 @@
                     <label for="edit-categories">Kategori ID</label>
                     <div class="input-group">
                       <select name="categories" id="edit-categories" placeholder="Input Categories" aria-label="Example select with button addon">
-                        <option selected>Pilih....</option>
                         @php
                         $data=App\Models\Categories::get();
                         @endphp
@@ -198,7 +197,6 @@
                   <label for="edit-brands">Brand ID</label>
                   <div class="input-group">
                     <select name="brands" id="edit-brands" placeholder="Input Brands" aria-label="Example select with button addon">
-                      <option selected>Pilih....</option>
                       @php
                       $data=App\Models\Brands::get();
                       @endphp

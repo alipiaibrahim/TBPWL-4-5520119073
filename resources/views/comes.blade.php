@@ -71,21 +71,32 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama Obat</label>
-                        <input type="text" class="form-control" placeholder="Masukan nama obat" name="nama" id="nama" required />
+                        {{-- <input type="text" class="form-control" placeholder="Masukan nama obat" name="nama" id="nama" required /> --}}
+                        <div class="input-group">
+                            <select class="form-control" name="nama" id="nama" placeholder="Input nama" aria-label="Example select with button addon">
+                              <option selected>Pilih....</option>
+                                @php
+                                $data=App\Models\Drug::get();
+                                @endphp
+                                @foreach($data as $key)
+                                <option value="{{$key->id}}">{{$key->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
-                        <input type="text" id ="demo" class="form-control" name="tanggal" id="tanggal" required />
+                        <input type="text" id ="date" class="date form-control" name="tanggal" id="tanggal" required />
                     </div>
                     <div class="form-group">
                         <label for="jumlah">Jumlah</label>
                         <input type="text" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <p style="font-style: italic;">*Note: </p>
                         <p style="font-style: italic;">Penulisan tanggal itu mulai dari tahun misal 2021-03-04 akan muncul output 2021-03-04</p>
                         <p style="font-style: italic;">Penamaan obat dilihat di Pengelolaan Barang</p>
-                    </div>
+                    </div> --}}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -115,11 +126,20 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="edit-nama">Nama Obat</label>
-                                <input type="text" class="form-control" name="nama" id="edit-nama" required />
+                                <div class="input-group">
+                                    <select class="form-control" name="nama" id="edit-nama" placeholder="Input nama" aria-label="Example select with button addon">
+                                        @php
+                                        $data=App\Models\Drug::get();
+                                        @endphp
+                                        @foreach($data as $key)
+                                        <option value="{{$key->id}}">{{$key->nama}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="edit-tanggal">Tanggal</label>
-                                <input type="text" class="form-control" name="tanggal" id="edit-tanggal" required />
+                                <input type="text" class="date form-control" name="tanggal" id="edit-tanggal" required />
                             </div>
                             <div class="form-group">
                                 <label for="edit-jumlah">Jumlah</label>
@@ -182,8 +202,15 @@
 @section('js')
 <script>
     $(function() {
-        var d = new Date("2015-3-25");
-        document.getElementById("demo").innerHTML = d;
+        $("#date").datepicker({
+            format: 'yyyy-mm-dd', // Notice the Extra space at the beginning
+            autoclose: true,
+            todayHighlight: true,
+            // viewMode: "date",
+            // minViewMode: "date"
+        });
+        // var d = new Date("2015-3-25");
+        // document.getElementById("demo").innerHTML = d;
 
         $(document).on('click', '#btn-edit-comes', function() {
             let id = $(this).data('id');
