@@ -16,6 +16,7 @@
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary float-left mr-3" data-toggle="modal" data-target="#modalTambahData"><i class="fa fa-plus"></i> Tambah Data</button>
+                    <a href="{{route('admin.print.masuk')}}" target="_blank" class="btn btn-secondary mb-5"><i class="fa fa-print"></i>Print to PDF</a>
 
                     <div class="btn-group mb-5" role="group" aria-label="Basis Example">
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\Calculation\Category;
+use PDF;
 
 class ClosesController extends Controller
 {
@@ -72,5 +73,13 @@ class ClosesController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('admin.keluar')->with($notification);
+    }
+    // PDF
+    public function print_keluar()
+    {
+        $keluar = Closes::all();
+
+        $pdf = PDF::loadview('print_keluar', ['keluar' => $keluar]);
+        return $pdf->download('data_barang_keluar.pdf');
     }
 }

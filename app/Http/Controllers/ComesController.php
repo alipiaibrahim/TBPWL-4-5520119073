@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\Calculation\Category;
+use PDF;
 
 class ComesController extends Controller
 {
@@ -72,5 +73,12 @@ class ComesController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('admin.masuk')->with($notification);
+    }
+    // pdf
+    public function print_masuk(){
+        $masuk = Comes::all();
+
+        $pdf = PDF ::loadview('print_masuk', ['masuk'=>$masuk]);
+        return $pdf->download('data_barang_masuk.pdf');
     }
 }

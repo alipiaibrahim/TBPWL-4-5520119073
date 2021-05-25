@@ -157,6 +157,11 @@ Route::delete('admin/keluar/delete', [ClosesController::class, 'delete_closes'])
     ->name('admin.keluar.delete')
     ->middleware('is_admin');
 
+// PDF
+Route::get('admin/print_keluar', [ClosesController::class, 'print_keluar'])
+    ->name('admin.print.keluar')
+    ->middleware('is_admin');
+
 
 // BARANG MASUK
 Route::get('admin/masuk', [ComesController::class, 'index'])
@@ -177,4 +182,8 @@ Route::get('admin/ajaxadmin/dataComes/{id}', [ComesController::class, 'getDataCo
 //route delete barang masuk
 Route::delete('admin/masuk/delete', [ComesController::class, 'delete_comes'])
     ->name('admin.masuk.delete')
+    ->middleware('is_admin');
+
+Route::get('admin/print_masuk', [ComesController::class, 'print_masuk'])
+    ->name('admin.print.masuk')
     ->middleware('is_admin');
