@@ -20,17 +20,17 @@
                             <br/>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputNama">Nama</label>
+                                    <label for="inputNama">Nama Depan</label>
                                         <input type="nama" class="form-control" id="inputNama" placeholder="Masukkan nama">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputPassword">Username</label>
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Masukkan username">
+                                    <label for="inputPassword">Belakang</label>
+                                        <input type="nama" class="form-control" id="inputNama" placeholder="Masukkan username">
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputTanggal">Tanggal Lahir</label>
-                                        <input type="text" class="form-control" id="inputTanggal" placeholder="Masukkan tanggal lahir">
+                                    <input type="text" class="date form-control" name="tanggal" id="edit-tanggal" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="inputCity">Jenis Kelamin</label>
@@ -133,4 +133,18 @@
 
 @section('js')
         <script>console.log ('Hi!')</script>
+@stop
+
+@section('js')
+<script>
+    $(function() {
+        $("#date").datepicker({
+            format: 'yyyy-mm-dd', // Notice the Extra space at the beginning
+            autoclose: true,
+            todayHighlight: true,
+            // viewMode: "date",
+            // minViewMode: "date"
+        });
+    });
+</script>
 @stop

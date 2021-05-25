@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <label for="jumlah">Jumlah</label>
-                        <input type="text" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
+                        <input type="number" min="0" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
                     </div>
             </div>
             <div class="modal-footer">
@@ -138,7 +138,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="edit-jumlah">Jumlah</label>
-                                <input type="text" class="form-control" name="jumlah" id="edit-jumlah" required />
+                                <input type="number" min="0" class="form-control" name="jumlah" id="edit-jumlah" required />
                             </div>
                         </div>
                     </div>
