@@ -72,7 +72,6 @@
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama Obat</label>
-                        {{-- <input type="text" class="form-control" placeholder="Masukan nama obat" name="nama" id="nama" required /> --}}
                         <div class="input-group">
                             <select class="form-control" name="nama" id="nama" placeholder="Input nama" aria-label="Example select with button addon">
                               <option selected>Pilih....</option>
@@ -93,11 +92,6 @@
                         <label for="jumlah">Jumlah</label>
                         <input type="text" class="form-control" placeholder="Masukan jumlah" name="jumlah" id="jumlah" required />
                     </div>
-                    {{-- <div class="form-group">
-                        <p style="font-style: italic;">*Note: </p>
-                        <p style="font-style: italic;">Penulisan tanggal itu mulai dari tahun misal 2021-03-04 akan muncul output 2021-03-04</p>
-                        <p style="font-style: italic;">Penamaan obat dilihat di Pengelolaan Barang</p>
-                    </div> --}}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

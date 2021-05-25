@@ -110,7 +110,7 @@
                   </select> --}}
               </div>
               <div class="form-group">
-                <label for="penerbit">Brand ID</label>
+                <label for="penerbit">Brand</label>
                 <div class="input-group">
                   <select name="brands" id="brands" placeholder="Input Brands" aria-label="Example select with button addon">
                     <option selected>Pilih....</option>
@@ -135,7 +135,7 @@
             </div> --}}
               <div class="form-group">
                   <label for="stok">Stok</label>
-                  <input type="text" class="form-control" name="stok" id="stok" required/>
+                  <input type="number" min="0" class="form-control" name="stok" id="stok" required/>
               </div>
               <div class="form-group">
                   <label for="harga">Harga</label>
@@ -186,7 +186,7 @@
                       <input type="text" class="form-control" name="jenis" id="edit-jenis" required/>
                   </div>
                   <div class="form-group">
-                    <label for="edit-categories">Kategori ID</label>
+                    <label for="edit-categories">Kategori</label>
                     <div class="input-group">
                       <select name="categories" id="edit-categories" placeholder="Input Categories" aria-label="Example select with button addon">
                         @php
@@ -199,7 +199,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  <label for="edit-brands">Brand ID</label>
+                  <label for="edit-brands">Brand</label>
                   <div class="input-group">
                     <select name="brands" id="edit-brands" placeholder="Input Brands" aria-label="Example select with button addon">
                       @php
@@ -214,11 +214,11 @@
               </div>
                   <div class="form-group">
                       <label for="edit-stok">Stok</label>
-                      <input type="text" class="form-control" name="stok" id="edit-stok" required/>
+                      <input type="number" min="0" class="form-control" name="stok" id="edit-stok" required/>
                   </div>
                   <div class="form-group">
                       <label for="edit-harga">Harga</label>
-                        <input type="number" class="form-control" name="harga" id="edit-harga" required/>
+                        <input type="text" class="form-control" name="harga" id="edit-harga" required/>
                       </div>
                   </div>
               <div class="col-md-6">

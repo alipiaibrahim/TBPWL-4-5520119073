@@ -10,8 +10,9 @@
 </head>
 
 <body>
- <h1 class="text-center">Data Barang Masuk</h1>
- <p class="text-center">Tahun 2021</p>
+  <h1 class="text-center">LAPORAN DATA BARANG MASUK</h1>
+  <h1 class="text-center">APOLIA APOTEK</h1>
+  <p class="text-center">TAHUN 2021</p>
  <br>
  <table id="table-data" class="table table-bordered">
   <thead>
